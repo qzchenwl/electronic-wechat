@@ -40,6 +40,12 @@ class ElectronicWeChat {
   };
 
   initIPC() {
+    ipcMain.on('close-wechat', () => {
+      if (this.wechatWindow) {
+        this.wechatWindow.hide();
+      }
+    });
+
     ipcMain.on('badge-changed', (event, num) => {
       if (process.platform == "darwin") {
         app.dock.setBadge(num);

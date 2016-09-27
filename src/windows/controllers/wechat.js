@@ -106,6 +106,10 @@ class WeChatWindow {
     this.wechatWindow.show();
   }
 
+  hide() {
+    this.wechatWindow.hide();
+  }
+
   connect() {
     Object.keys(this.inervals).forEach((key, index) => {
       clearInterval(key);
